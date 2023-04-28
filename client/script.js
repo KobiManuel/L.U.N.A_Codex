@@ -10,9 +10,9 @@ function loader(element) {
   element.textContent = "";
 
   loadInterval = setInterval(() => {
-    element.textContent += ".";
+    element.textContent += "♥";
 
-    if (element.textContent === "....") {
+    if (element.textContent === "♥♥♥♥") {
       element.textContent = "";
     }
   }, 300);
