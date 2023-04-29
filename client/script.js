@@ -2,6 +2,7 @@ import bot from "./assets/bot.svg";
 import user from "./assets/user.svg";
 
 const form = document.querySelector("form");
+const textarea = document.querySelector("textarea");
 const chatContainer = document.getElementById("chat_container");
 
 let loadInterval;
@@ -55,9 +56,12 @@ function chatStripe(isAi, value, uniqueId) {
 
 const handleSubmit = async (e) => {
   e.preventDefault();
-
   const data = new FormData(form);
-
+  textarea.value = "";
+  if (textarea.value === "") {
+    // Reset form height to default value
+    form.style.height = "auto";
+  }
   //user's chat box
   chatContainer.innerHTML += chatStripe(false, data.get("prompt"));
 
@@ -94,7 +98,7 @@ const handleSubmit = async (e) => {
   } else {
     const err = await response.text();
 
-    messageDiv.innerHTML = "Something went wrong";
+    messageDiv.innerHTML = "Houston, we have a problem! 🤯🤯";
 
     alert(err);
   }

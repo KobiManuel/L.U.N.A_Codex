@@ -10,16 +10,30 @@
   <body>
     <div id="app">
       <div id="chat_container"></div>
-      <form>
-        <textarea
-          name="prompt"
-          rows="1"
-          cols="1"
-          placeholder="Ask L.U.N.A..."
-        ></textarea>
-        <button type="submit"><img src="assets/send.svg" /></button>
-      </form>
+      <div class="form-container">
+        <form style="min-height: 62px">
+          <textarea
+            name="prompt"
+            rows="1"
+            cols="1"
+            placeholder="Ask L.U.N.A..."
+            oninput="autoResize()"
+          ></textarea>
+          <button type="submit"><img src="assets/send.svg" /></button>
+        </form>
+      </div>
     </div>
     <script type="module" src="/script.js"></script>
   </body>
+  <script>
+    function autoResize() {
+      const form = document.querySelector("form");
+      const textarea = document.querySelector("textarea");
+      const height = textarea.scrollHeight - textarea.scrollHeight * 0.5;
+      if (textarea.scrollHeight > 62) {
+        form.style.height = `${textarea.scrollHeight - height}px`;
+      }
+      console.log(textarea.scrollHeight);
+    }
+  </script>
 </html>
