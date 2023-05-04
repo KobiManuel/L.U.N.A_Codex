@@ -44,6 +44,7 @@ body {
 }
 
 .wrapper {
+  position: relative;
   width: 100%;
   padding: 30px 15px;
 }
@@ -211,4 +212,26 @@ button {
 form img {
   width: 30px;
   height: 30px;
+}
+
+svg {
+  position: absolute;
+  right: 35px;
+  top: 5px;
+  width: 20px;
+  height: 20px;
+  fill: #002240;
+  cursor: pointer;
+}
+path {
+  fill: #002240;
+}
+
+@media screen and (max-width: 1172px) {
+   #app {
+    width: 80%;
+   }
+   .form-container {
+    width: 80%;
+   }
 }
