@@ -213,19 +213,47 @@ form img {
   width: 30px;
   height: 30px;
 }
+#btn {
+  position: absolute;
+  right: 30px;
+  top: 8px;
+  width: 18px;
+  height: 18px;
+}
 
 svg {
-  position: absolute;
-  right: 35px;
-  top: 5px;
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   fill: #002240;
   cursor: pointer;
 }
 path {
-  fill: #002240;
+  fill: #4c9ce267;
 }
+.copy_float {
+  position: absolute;
+  top: -32px;
+  left: -60px;
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: #002240;
+  color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+  font-size: 11px;
+  margin-top: 10px;
+}
+.copy_float::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    right: 0;
+    margin-left: -10px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent #002240 transparent;
+    transform: rotate(220deg) !important;
+  }
 
 @media screen and (max-width: 1172px) {
    #app {
