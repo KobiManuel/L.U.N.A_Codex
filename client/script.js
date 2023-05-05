@@ -51,10 +51,6 @@ function chatStripe(isAi, value, uniqueId) {
     button.innerHTML = copySvg;
     button.setAttribute("onClick", "handleClick(event)");
     wrapper.appendChild(button);
-    // button.addEventListener("click", () => {
-    //   console.log("clicked");
-    //   button.innerHTML = checkCircle;
-    // });
   }
 
   const chatDiv = document.createElement("div");

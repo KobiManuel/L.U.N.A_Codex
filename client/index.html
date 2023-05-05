@@ -11,8 +11,8 @@
     <div id="app">
       <div id="typing-text" class="wrapper ai">
         <span class="profile ai">
-      <img src="./assets/bot.svg" alt="/" />
-      </span>
+          <img src="./assets/bot.svg" alt="/" />
+        </span>
       </div>
       <div id="chat_container"></div>
       <div class="form-container">
@@ -31,26 +31,25 @@
     <script type="module" src="/script.js"></script>
   </body>
   <script>
-    const text = "Hello, I am L.U.N.A codex. Your Language Understanding Neural Assistant. I am here to assist you on your tasks.";
-  const speed = 50;
-  let i = 0;
-  
-  function typeText() {
-    if (i < text.length) {
-      document.getElementById("typing-text").innerHTML += text.charAt(i);
-      i++;
-      setTimeout(typeText, speed);
+    const text =
+      "Hello, I am L.U.N.A codex. Your Language Understanding Neural Assistant. I am here to assist you on your tasks.";
+    const speed = 50;
+    let i = 0;
+
+    function typeText() {
+      if (i < text.length) {
+        document.getElementById("typing-text").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeText, speed);
+      }
     }
-  }
-  
-  window.onload = typeText;
 
+    window.onload = typeText;
 
-
-function handleClick(event) {
-  const button = event.currentTarget;
-  const div = button.parentNode;
-  const checkCircle = `<svg
+    function handleClick(event) {
+      const button = event.currentTarget;
+      const div = button.parentNode;
+      const checkCircle = `<svg
     width="16"
     height="16"
     viewBox="0 0 24 24"
@@ -69,74 +68,68 @@ function handleClick(event) {
       d="M15.5935 9.27461C15.8746 9.55578 15.8746 10.0117 15.5935 10.2928L11.1604 14.7259C10.8793 15.007 10.4235 15.0071 10.1423 14.726L7.92486 12.5094C7.64362 12.2284 7.64352 11.7725 7.92464 11.4913C8.20577 11.21 8.66164 11.2099 8.94287 11.491L10.6512 13.1986L14.5752 9.27461C14.8564 8.99342 15.3123 8.99342 15.5935 9.27461Z"
       fill="#9747FF"
     />
-  </svg>`; // Replace with check circle SVG code
-  const copySvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" id="copy-data"><path fill="#F15439" d="M45.321 16.538h13.217L45.321 3z"></path><path fill="#399BB9" d="M33.308 11.923H7.923V61h38.923V25.462H33.308V11.923z"></path><path fill="#FFF" d="M33.308 25.462h13.538L33.308 11.923z"></path><path d="M47.846 62H6.923V10.923h26.799l14.125 14.125V62zM8.923 60h36.923V25.876L32.894 12.923H8.923V60z"></path><path d="M46.846 26.462H32.308V11.923h2v12.539h12.538zM12.154 29.538h30.461v2H12.154zM12.154 54.923h30.461v2H12.154zM12.154 49.846h30.461v2H12.154zM12.154 44.77h30.461v2H12.154zM12.154 39.692h30.461v2H12.154zM12.154 34.615h30.461v2H12.154zM12.154 19.385h15.231v2H12.154zM29.077 19.385h1.692v2h-1.692zM12.154 24.462h15.231v2H12.154zM29.077 24.462h1.692v2h-1.692zM12.154 14.308h15.231v2H12.154zM29.077 14.308h1.692v2h-1.692z"></path><path d="M59.527 53.065h-9.588v-1.976h7.611V16.94L44.905 3.988H21.527v4.589H19.55V2.012h26.187l13.79 14.124z"></path><path d="M58.539 17.526H44.333V3h1.977v12.55h12.229z"></path></svg>`; // Replace with copy SVG code
-  const copiedSpan = `<span class="copy_float">Copied!</span>`;
+  </svg>`;
+      const copySvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" id="copy-data"><path fill="#F15439" d="M45.321 16.538h13.217L45.321 3z"></path><path fill="#399BB9" d="M33.308 11.923H7.923V61h38.923V25.462H33.308V11.923z"></path><path fill="#FFF" d="M33.308 25.462h13.538L33.308 11.923z"></path><path d="M47.846 62H6.923V10.923h26.799l14.125 14.125V62zM8.923 60h36.923V25.876L32.894 12.923H8.923V60z"></path><path d="M46.846 26.462H32.308V11.923h2v12.539h12.538zM12.154 29.538h30.461v2H12.154zM12.154 54.923h30.461v2H12.154zM12.154 49.846h30.461v2H12.154zM12.154 44.77h30.461v2H12.154zM12.154 39.692h30.461v2H12.154zM12.154 34.615h30.461v2H12.154zM12.154 19.385h15.231v2H12.154zM29.077 19.385h1.692v2h-1.692zM12.154 24.462h15.231v2H12.154zM29.077 24.462h1.692v2h-1.692zM12.154 14.308h15.231v2H12.154zM29.077 14.308h1.692v2h-1.692z"></path><path d="M59.527 53.065h-9.588v-1.976h7.611V16.94L44.905 3.988H21.527v4.589H19.55V2.012h26.187l13.79 14.124z"></path><path d="M58.539 17.526H44.333V3h1.977v12.55h12.229z"></path></svg>`;
+      const copiedSpan = `<span class="copy_float">Copied!</span>`;
 
-  // Copy text to clipboard (same as before)
-  const text = div.querySelector(".message").textContent;
-  navigator.clipboard.writeText(text);
+      const text = div.querySelector(".message").textContent;
+      navigator.clipboard.writeText(text);
 
-  // Add "copied" span to div
-  button.innerHTML = checkCircle + copiedSpan;
+      button.innerHTML = checkCircle + copiedSpan;
 
-  // Remove "copied" span after 2 seconds
-  setTimeout(() => {
-    const copiedSpan = div.querySelector(".copy_float");
-    copiedSpan.parentNode.removeChild(copiedSpan);
-    button.innerHTML = copySvg;
-  }, 3000);
-}
+      setTimeout(() => {
+        button.innerHTML = copySvg;
+      }, 3000);
+    }
 
-
-//     function handleClick() {
-//       const button = document.getElementById("btn");
-//       const divs = document.querySelectorAll('.wrapper.ai');
-//       const checkCircle = `<svg
-//     width="16"
-//     height="16"
-//     viewBox="0 0 24 24"
-//     fill="none"
-//     xmlns="http://www.w3.org/2000/svg"
-//   >
-//     <path
-//       fillRule="evenodd"
-//       clipRule="evenodd"
-//       d="M11.7604 4.08001C7.38595 4.08001 3.84039 7.62557 3.84039 12C3.84039 16.3736 7.38601 19.92 11.7604 19.92C16.1348 19.92 19.6804 16.3736 19.6804 12C19.6804 7.62557 16.1348 4.08001 11.7604 4.08001ZM2.40039 12C2.40039 6.83029 6.59067 2.64001 11.7604 2.64001C16.9301 2.64001 21.1204 6.83029 21.1204 12C21.1204 17.1687 16.9302 21.36 11.7604 21.36C6.59061 21.36 2.40039 17.1687 2.40039 12Z"
-//       fill="#9747FF"
-//     />
-//     <path
-//       fillRule="evenodd"
-//       clipRule="evenodd"
-//       d="M15.5935 9.27461C15.8746 9.55578 15.8746 10.0117 15.5935 10.2928L11.1604 14.7259C10.8793 15.007 10.4235 15.0071 10.1423 14.726L7.92486 12.5094C7.64362 12.2284 7.64352 11.7725 7.92464 11.4913C8.20577 11.21 8.66164 11.2099 8.94287 11.491L10.6512 13.1986L14.5752 9.27461C14.8564 8.99342 15.3123 8.99342 15.5935 9.27461Z"
-//       fill="#9747FF"
-//     />
-//   </svg>`;
-//       const copySvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" id="copy-data"><path fill="#F15439" d="M45.321 16.538h13.217L45.321 3z"></path><path fill="#399BB9" d="M33.308 11.923H7.923V61h38.923V25.462H33.308V11.923z"></path><path fill="#FFF" d="M33.308 25.462h13.538L33.308 11.923z"></path><path d="M47.846 62H6.923V10.923h26.799l14.125 14.125V62zM8.923 60h36.923V25.876L32.894 12.923H8.923V60z"></path><path d="M46.846 26.462H32.308V11.923h2v12.539h12.538zM12.154 29.538h30.461v2H12.154zM12.154 54.923h30.461v2H12.154zM12.154 49.846h30.461v2H12.154zM12.154 44.77h30.461v2H12.154zM12.154 39.692h30.461v2H12.154zM12.154 34.615h30.461v2H12.154zM12.154 19.385h15.231v2H12.154zM29.077 19.385h1.692v2h-1.692zM12.154 24.462h15.231v2H12.154zM29.077 24.462h1.692v2h-1.692zM12.154 14.308h15.231v2H12.154zM29.077 14.308h1.692v2h-1.692z"></path><path d="M59.527 53.065h-9.588v-1.976h7.611V16.94L44.905 3.988H21.527v4.589H19.55V2.012h26.187l13.79 14.124z"></path><path d="M58.539 17.526H44.333V3h1.977v12.55h12.229z"></path></svg>`;
-//       button.innerHTML = checkCircle + `<span class="copy_float">Copied</span>`;
-//       setTimeout(() => {
-//         button.innerHTML = copySvg;
-//       }, 3000);
-
-// // loop through each div and add a button and event listener
-// divs.forEach((div) => {
-//     const text = div.textContent.trim(); 
-//     // create a temporary input element
-//     const input = document.createElement('input');
-//     input.setAttribute('type', 'text');
-//     input.setAttribute('value', text);
-
-//     document.body.appendChild(input);
+    //     function handleClick() {
+    //       const button = document.getElementById("btn");
+    //       const divs = document.querySelectorAll('.wrapper.ai');
+    //       const checkCircle = `<svg
+    //     width="16"
+    //     height="16"
+    //     viewBox="0 0 24 24"
+    //     fill="none"
+    //     xmlns="http://www.w3.org/2000/svg"
+    //   >
+    //     <path
+    //       fillRule="evenodd"
+    //       clipRule="evenodd"
+    //       d="M11.7604 4.08001C7.38595 4.08001 3.84039 7.62557 3.84039 12C3.84039 16.3736 7.38601 19.92 11.7604 19.92C16.1348 19.92 19.6804 16.3736 19.6804 12C19.6804 7.62557 16.1348 4.08001 11.7604 4.08001ZM2.40039 12C2.40039 6.83029 6.59067 2.64001 11.7604 2.64001C16.9301 2.64001 21.1204 6.83029 21.1204 12C21.1204 17.1687 16.9302 21.36 11.7604 21.36C6.59061 21.36 2.40039 17.1687 2.40039 12Z"
+    //       fill="#9747FF"
+    //     />
+    //     <path
+    //       fillRule="evenodd"
+    //       clipRule="evenodd"
+    //       d="M15.5935 9.27461C15.8746 9.55578 15.8746 10.0117 15.5935 10.2928L11.1604 14.7259C10.8793 15.007 10.4235 15.0071 10.1423 14.726L7.92486 12.5094C7.64362 12.2284 7.64352 11.7725 7.92464 11.4913C8.20577 11.21 8.66164 11.2099 8.94287 11.491L10.6512 13.1986L14.5752 9.27461C14.8564 8.99342 15.3123 8.99342 15.5935 9.27461Z"
+    //       fill="#9747FF"
+    //     />
+    //   </svg>`;
+    //       const copySvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" id="copy-data"><path fill="#F15439" d="M45.321 16.538h13.217L45.321 3z"></path><path fill="#399BB9" d="M33.308 11.923H7.923V61h38.923V25.462H33.308V11.923z"></path><path fill="#FFF" d="M33.308 25.462h13.538L33.308 11.923z"></path><path d="M47.846 62H6.923V10.923h26.799l14.125 14.125V62zM8.923 60h36.923V25.876L32.894 12.923H8.923V60z"></path><path d="M46.846 26.462H32.308V11.923h2v12.539h12.538zM12.154 29.538h30.461v2H12.154zM12.154 54.923h30.461v2H12.154zM12.154 49.846h30.461v2H12.154zM12.154 44.77h30.461v2H12.154zM12.154 39.692h30.461v2H12.154zM12.154 34.615h30.461v2H12.154zM12.154 19.385h15.231v2H12.154zM29.077 19.385h1.692v2h-1.692zM12.154 24.462h15.231v2H12.154zM29.077 24.462h1.692v2h-1.692zM12.154 14.308h15.231v2H12.154zM29.077 14.308h1.692v2h-1.692z"></path><path d="M59.527 53.065h-9.588v-1.976h7.611V16.94L44.905 3.988H21.527v4.589H19.55V2.012h26.187l13.79 14.124z"></path><path d="M58.539 17.526H44.333V3h1.977v12.55h12.229z"></path></svg>`;
+    //       button.innerHTML = checkCircle + `<span class="copy_float">Copied</span>`;
+    //       setTimeout(() => {
+    //         button.innerHTML = copySvg;
+    //       }, 3000);
     
-//     input.select();
+    // // loop through each div and add a button and event listener
+    // divs.forEach((div) => {
+    //     const text = div.textContent.trim();
+    //     // create a temporary input element
+    //     const input = document.createElement('input');
+    //     input.setAttribute('type', 'text');
+    //     input.setAttribute('value', text);
 
-//     document.execCommand('copy');
-    
-//     document.body.removeChild(input);
-  
-// });
+    //     document.body.appendChild(input);
 
-//     }
+    //     input.select();
+
+    //     document.execCommand('copy');
+
+    //     document.body.removeChild(input);
+
+    // });
+
+    //     }
 
     function autoResize() {
       const form = document.querySelector("form");
