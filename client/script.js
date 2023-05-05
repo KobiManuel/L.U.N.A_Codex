@@ -77,8 +77,16 @@ const handleSubmit = async (e) => {
   const welcome = document.getElementById("typing-text");
   welcome.classList.add("hidden");
   const data = new FormData(form);
-  textarea.value = "";
-  if (textarea.value === "") {
+  console.log(textarea.value.trim());
+  if (textarea.value.trim() === "") {
+    // Reset form height to default value
+    form.style.height = "auto";
+    alert("Empty prompt");
+    return;
+  }
+  textarea.value="";
+
+  if (textarea.value.trim() === "") {
     // Reset form height to default value
     form.style.height = "auto";
   }
