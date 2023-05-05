@@ -1,5 +1,5 @@
-import bot from "./assets/bot.svg";
-import user from "./assets/user.svg";
+import bot from "./assets/lunabot1.png";
+import user from "./assets/user.png";
 
 const form = document.querySelector("form");
 const textarea = document.querySelector("textarea");
