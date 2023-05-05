@@ -79,6 +79,8 @@ function chatStripe(isAi, value, uniqueId) {
 
 const handleSubmit = async (e) => {
   e.preventDefault();
+  const welcome = document.getElementById("typing-text");
+  welcome.classList.add("hidden");
   const data = new FormData(form);
   textarea.value = "";
   if (textarea.value === "") {

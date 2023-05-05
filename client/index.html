@@ -9,6 +9,11 @@
   </head>
   <body>
     <div id="app">
+      <div id="typing-text" class="wrapper ai">
+        <span class="profile ai">
+      <img src="./assets/bot.svg" alt="/" />
+      </span>
+      </div>
       <div id="chat_container"></div>
       <div class="form-container">
         <form style="min-height: 62px">
@@ -26,6 +31,19 @@
     <script type="module" src="/script.js"></script>
   </body>
   <script>
+    const text = "Hello, I am L.U.N.A codex. Your Language Understanding Neural Assistant. I am here to assist you on your tasks.";
+  const speed = 50;
+  let i = 0;
+  
+  function typeText() {
+    if (i < text.length) {
+      document.getElementById("typing-text").innerHTML += text.charAt(i);
+      i++;
+      setTimeout(typeText, speed);
+    }
+  }
+  
+  window.onload = typeText;
     function handleClick() {
       const button = document.getElementById("btn");
       const divs = document.querySelectorAll('.message');
@@ -62,7 +80,7 @@ divs.forEach((div) => {
     const input = document.createElement('input');
     input.setAttribute('type', 'text');
     input.setAttribute('value', text);
-    
+
     document.body.appendChild(input);
     
     input.select();
