@@ -71,7 +71,7 @@ body {
   min-width: 36px;
   height: 36px;
   border-radius: 5px;
-  background-color:#4c9ce252;
+  background-color: #4c9ce252;
   border-radius: 60%;
   display: flex;
   justify-content: center;
@@ -210,7 +210,7 @@ form img {
 }
 #btn {
   position: absolute;
-  right: 30px;
+  right: 10px;
   top: 8px;
   width: 18px;
   height: 18px;
@@ -239,16 +239,16 @@ path {
   margin-top: 10px;
 }
 .copy_float::after {
-    content: "";
-    position: absolute;
-    bottom: -10px;
-    right: 0;
-    margin-left: -10px;
-    border-width: 10px;
-    border-style: solid;
-    border-color: transparent transparent #002240 transparent;
-    transform: rotate(220deg) !important;
-  }
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  right: 0;
+  margin-left: -10px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent transparent #002240 transparent;
+  transform: rotate(220deg) !important;
+}
 #typing-text {
   display: flex;
   align-items: center;
@@ -261,16 +261,16 @@ path {
   display: none !important;
 }
 @media screen and (max-width: 1172px) {
-   #app {
+  #app {
     width: 80%;
-   }
-   .form-container {
+  }
+  .form-container {
     width: 80%;
-   }
+  }
 }
 @media screen and (max-width: 707px) {
-#typing-text {
-  gap: 16px;
-  align-items: flex-start;
-}
+  #typing-text {
+    gap: 16px;
+    align-items: flex-start;
+  }
 }
